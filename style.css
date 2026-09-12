@@ -14,7 +14,7 @@
     inherits: false;
     initial-value: #d8ffa6;
 }
-@keyframes  background-color-anim {
+@keyframes  bg-color-anim {
     0%  {--bg-color: #d8ffa6;}
     33% {--bg-color: #a6cdff;}
     66%{--bg-color: #ffa6ec;}
@@ -57,7 +57,7 @@ body{
         radial-gradient(circle at -10% 110%, #60caff, #60caff80 5%, transparent 40%, #ffcece80 95%, #ffcece),
         url(noise.svg),
         var(--bg-color) ;
-    animation: background-color-anim 10s 0s linear infinite;
+    animation: bg-color-anim 10s 0s linear infinite;
 }
 header{
     display: flex;
@@ -79,7 +79,6 @@ h1{
     font-size: 2.5rem;
 }
 h2{
-    margin-bottom: 4rem;
     text-align: center;
 }
 main{
@@ -92,6 +91,7 @@ main{
     }
 }
 .separator1{
+    margin-top: 4rem;
     width: 100vw;
     height: 15vw;
     background: linear-gradient(-7deg, var(--main-bg-color) 45%, #0000 45%, #0000 47%, var(--main-bg-color) 47%, var(--main-bg-color) 50%,#0000 50%);

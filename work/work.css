@@ -1,0 +1,46 @@
+#cards{
+    display: grid;
+    padding: 2rem 15vw;
+    grid-template-columns: 1fr 1fr;
+}
+.card{
+    margin: .5rem;
+    padding: .5rem;
+    border: var(--bg-color) 1px solid;
+    border-radius: .5rem;
+    animation: bg-color-anim 10s 0s linear infinite;
+    >time{
+        display: block;
+        color: #666;
+        font-size: .8rem;
+        &::before{
+            content: "[";
+            margin-right: .2rem;
+        }
+        &::after{
+            content: "]";
+            margin-left: .2rem;
+        }
+    }
+}
+.card-title{
+    display: inline-block;
+    font-weight: bold;
+}
+.card-tag{
+    margin: 0 .25rem 0 0;
+    color: #666;
+    white-space: nowarp;
+    font-size: .8rem;
+    transition: none;
+    &::before{
+        content: "#";
+    }
+    &:hover{
+        color: #000;
+        text-decoration: none;
+    }
+    &:active{
+        filter: none;
+    }
+}
