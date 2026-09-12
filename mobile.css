@@ -1,6 +1,9 @@
 :root{
     --main-txt-size: 1rem;
 }
+h1{
+    margin-top: 5rem;
+}
 @media screen and (max-width: 300px) {
     :root{
         --main-txt-size: 5vw
