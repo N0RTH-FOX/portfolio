@@ -1,0 +1,114 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+    font-family:"Roboto Mono", "M PLUS U", monospace;
+    font-optical-sizing: auto;
+    font-style: normal;
+    overflow-x: hidden;
+}
+a{
+    color: #000;
+    text-decoration: none;
+    transition: color .1s;
+    &:hover{
+    color: #21ae76;
+    text-decoration: underline;
+    }
+    &:active{
+        color: #21ae76;
+        filter: blur(2px);
+    }
+}
+@property --bg-color{
+    syntax: '<color>';
+    inherits: false;
+    initial-value: #d8ffa6;
+}
+@keyframes  background-color-anim {
+    0%  {--bg-color: #d8ffa6;}
+    33% {--bg-color: #a6cdff;}
+    66%{--bg-color: #ffa6ec;}
+    100%  {--bg-color: #d8ffa6;}
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    background: 
+        radial-gradient(circle at -10% 110%, #60caff, #60caff80 5%, transparent 40%, #ffcece80 95%, #ffcece),
+        url(noise.svg),
+        var(--bg-color) ;
+    animation: background-color-anim 20s 0s linear infinite;
+}
+header{
+    display: flex;
+    position: sticky;
+    top: 0;
+    padding: .5rem 1rem;
+    background: #fff2;
+    backdrop-filter: blur(10px);
+    
+    >a{
+        font-weight: bold;
+        display: inline-block;
+        font-size: 1.2rem;
+    }
+}
+h1{
+    margin-top: 10rem;
+    text-align: center;
+    font-size: 2.5rem;
+}
+h2{
+    margin-bottom: 4rem;
+    text-align: center;
+}
+main{
+    background: #fff;
+    display: grid;
+    place-items: center;
+    >h2::after,h2::before{
+        content: "-";
+        margin: 0 .5rem;
+    }
+}
+.separator1{
+    width: 100vw;
+    height: 15vw;
+    background: linear-gradient(-7deg, #fff 45%, #fff0 45%, #fff0 47%, #fff 47%, #fff 50%,#fff0 50%);
+}
+.separator2{
+    width: 100vw;
+    height: 15vw;
+    background: linear-gradient(-187deg, #fff 45%, #fff0 45%, #fff0 47%, #fff 47%, #fff 50%,#fff0 50%);
+}
+table{
+    font-size: 1.7rem;
+    margin: .5rem 0;
+    text-align: left;
+    max-width: 90vw;
+}
+caption{
+    font-size: 1.7rem;
+    font-weight: bold;
+    &::before,&::after{
+        content: "-";
+        margin: 0 .5rem;
+    }
+}
+th,td,td>a{
+    font-size: 1.7rem;
+    white-space: pre;
+}
+footer{
+    margin-top: 2rem;
+    padding: 3rem 0;
+    text-align: center;
+    background: #fff5;
+    backdrop-filter: blur(10px);
+    >p{
+        display: inline-block;
+        padding: 0 2rem;
+        background: linear-gradient( #0000 50%, #fff 50%, #fff 93%, #0000 93%);
+    }
+}
