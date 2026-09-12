@@ -1,3 +1,33 @@
+/* 変数定義 */
+@property --main-bg-color{
+    syntax: '<color>';
+    inherits: false;
+    initial-value: #fff;
+}
+@property --main-txt-size{
+    syntax: '<length>';
+    inherits: false;
+    initial-value: 1.7rem;
+}
+@property --bg-color{
+    syntax: '<color>';
+    inherits: false;
+    initial-value: #d8ffa6;
+}
+@keyframes  background-color-anim {
+    0%  {--bg-color: #d8ffa6;}
+    33% {--bg-color: #a6cdff;}
+    66%{--bg-color: #ffa6ec;}
+    100%  {--bg-color: #d8ffa6;}
+}
+/* 初期化 */
+:root{
+    --main-bg-color: #fff;
+    --main-txt-size: 1.7rem;
+    --bg-color: #d8ffa6;
+}
+
+
 *{
     margin: 0;
     padding: 0;
@@ -20,17 +50,6 @@ a{
         filter: blur(2px);
     }
 }
-@property --bg-color{
-    syntax: '<color>';
-    inherits: false;
-    initial-value: #d8ffa6;
-}
-@keyframes  background-color-anim {
-    0%  {--bg-color: #d8ffa6;}
-    33% {--bg-color: #a6cdff;}
-    66%{--bg-color: #ffa6ec;}
-    100%  {--bg-color: #d8ffa6;}
-}
 body{
     width: 100vw;
     height: 100vh;
@@ -38,7 +57,7 @@ body{
         radial-gradient(circle at -10% 110%, #60caff, #60caff80 5%, transparent 40%, #ffcece80 95%, #ffcece),
         url(noise.svg),
         var(--bg-color) ;
-    animation: background-color-anim 20s 0s linear infinite;
+    animation: background-color-anim 10s 0s linear infinite;
 }
 header{
     display: flex;
@@ -64,7 +83,7 @@ h2{
     text-align: center;
 }
 main{
-    background: #fff;
+    background: var(--main-bg-color);
     display: grid;
     place-items: center;
     >h2::after,h2::before{
@@ -75,21 +94,21 @@ main{
 .separator1{
     width: 100vw;
     height: 15vw;
-    background: linear-gradient(-7deg, #fff 45%, #fff0 45%, #fff0 47%, #fff 47%, #fff 50%,#fff0 50%);
+    background: linear-gradient(-7deg, var(--main-bg-color) 45%, #0000 45%, #0000 47%, var(--main-bg-color) 47%, var(--main-bg-color) 50%,#0000 50%);
 }
 .separator2{
     width: 100vw;
     height: 15vw;
-    background: linear-gradient(-187deg, #fff 45%, #fff0 45%, #fff0 47%, #fff 47%, #fff 50%,#fff0 50%);
+    background: linear-gradient(-187deg, var(--main-bg-color) 45%, #0000 45%, #0000 47%, var(--main-bg-color) 47%, var(--main-bg-color) 50%,#0000 50%);
 }
 table{
-    font-size: 1.7rem;
+    font-size: var(--main-txt-size);
     margin: .5rem 0;
     text-align: left;
     max-width: 90vw;
 }
 caption{
-    font-size: 1.7rem;
+    font-size: var(--main-txt-size);
     font-weight: bold;
     &::before,&::after{
         content: "-";
@@ -97,7 +116,7 @@ caption{
     }
 }
 th,td,td>a{
-    font-size: 1.7rem;
+    font-size: var(--main-txt-size);
     white-space: pre;
 }
 footer{
@@ -108,7 +127,7 @@ footer{
     backdrop-filter: blur(10px);
     >p{
         display: inline-block;
-        padding: 0 2rem;
+        padding: 0 .5rem;
         background: linear-gradient( #0000 50%, #fff 50%, #fff 93%, #0000 93%);
     }
 }

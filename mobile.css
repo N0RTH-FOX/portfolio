@@ -1,0 +1,18 @@
+:root{
+    --main-txt-size: 1rem;
+}
+@media screen and (max-width: 300px) {
+    :root{
+        --main-txt-size: 5vw
+    }
+}
+@media screen and (max-width: 60px), screen and (max-height: 60px) {
+    body{
+        >*{
+            display: none;
+        }
+        &::after{
+            content: "見ないで";
+        }
+    }
+}
