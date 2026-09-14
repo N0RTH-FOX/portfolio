@@ -2,24 +2,24 @@
     "cards" : [
         {
             "number" : 0,
-            "year": 2024,
-            "month": 10,
+            "year" : 2024,
+            "month" : 10,
             "title" : "黒塗り世界宛書簡をマークアップ言語のみで再現",
             "tags" : ["二次創作","Web系","プログラミング"]
         },
         {
-            "number": 1,
-            "year": 2026,
-            "month": 5,
+            "number" : 1,
+            "year" : 2026,
+            "month" : 5,
             "title" : "IroGuessr",
-            "tags": ["ゲーム","Web系","プログラミング"]
+            "tags" : ["オリジナル","ゲーム","Web系","プログラミング"]
         },
         {
-            "number": 2,
-            "year": 2026,
-            "month": 9,
-            "title": "【ネメエル対応】しんぷるきゃみそーる",
-            "tags": ["VRChat","3DCG","配布"]
+            "number" : 2,
+            "year" : 2026,
+            "month" : 9,
+            "title" : "【ネメエル対応】しんぷるきゃみそーる",
+            "tags" : ["オリジナル","VRChat","3DCG","配布"]
         }
     ]
 }
