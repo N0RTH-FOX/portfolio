@@ -1,1 +1,1 @@
-https://n0rth-fox.com/w
+https://n0rth-fox.com/
