@@ -1,0 +1,49 @@
+<div id="note-feed">読み込み中...</div>
+
+<script>
+async function displayNoteRSS() {
+  // 同一ドメイン内のFunctionsを叩く（CORSエラーは起きない）
+  const apiUrl = '/note-rss'; 
+
+  try {
+    const response = await fetch(apiUrl);
+    if (!response.ok) throw new Error('取得エラー');
+    
+    const xmlText = await response.text();
+    
+    // JS標準のDOMParserを使ってXMLを解析
+    const parser = new DOMParser();
+    const xmlDoc = parser.parseFromString(xmlText, "application/xml");
+    const items = xmlDoc.querySelectorAll("item");
+    
+    let html = '<ul>';
+    
+    // 最新5件をループ処理
+    const maxItems = Math.min(items.length, 5);
+    for (let i = 0; i < maxItems; i++) {
+      const item = items[i];
+      const title = item.querySelector("title").textContent;
+      const link = item.querySelector("link").textContent;
+      
+      // 日付の取得（noteのRSSはpubDate）
+      const pubDateText = item.querySelector("pubDate")?.textContent;
+      const date = pubDateText ? new Date(pubDateText).toLocaleDateString('ja-JP') : '';
+
+      html += `
+        <li>
+          <span class="date">${date}</span>
+          <a href="${link}" target="_blank" rel="noopener noreferrer">${title}</a>
+        </li>
+      `;
+    }
+    
+    html += '</ul>';
+    document.getElementById('note-feed').innerHTML = html;
+  } catch (error) {
+    console.error(error);
+    document.getElementById('note-feed').innerHTML = 'noteの読み込みに失敗しました。';
+  }
+}
+
+window.addEventListener('DOMContentLoaded', displayNoteRSS);
+</script>

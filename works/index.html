@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>WORKS - N0RTH_FOX</title>
+    <!-- pc用 -->
+    <link rel="stylesheet" href="work.css">
+    <link rel="stylesheet" href="../style.css">
+    <!-- mobile用 -->
+    <link rel="stylesheet" href="work-mobile.css" media="screen and (max-width: 599px)">
+    <link rel="stylesheet" href="../mobile.css" media="screen and (max-width: 599px)">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap&text=0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz !#$%&'()*+,-./:;<=>?@[\]^_`{|}~"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+U:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <a href="https://n0rth-fox.com/" id="toHome">N0RTH_FOX</a>
+        <div id="header-items">
+            <a href="https://n0rth-fox.com/work">WORKS</a>
+        </div>
+    </header>
+    <h1>WORKS</h1>
+    <h2>編集中の記事です！</h2>
+    <div class="separator1"></div>
+    <main>
+        <!-- <button id="sort-button"><span class="material-icons">filter_list</span></button> -->
+        <div id="filter-setting">
+            <div id="show">
+                <div id="show-fanmade"><p>二次創作</p></div>
+                <div id="show-web"><p>Web系</p></div>
+                <div id="show-program"><p>プログラミング</p></div>
+                <div id="show-original"><p>オリジナル</p></div>
+                <div id="show-game"><p>ゲーム</p></div>
+                <div id="show-vrc"><p>VRChat</p></div>
+                <div id="show-b3d"><p>3DCG</p></div>
+                <div id="show-haihu"><p>配布</p></div>
+            </div>
+            <div id="hide">
+                <div id="hide-fanmade"><p>二次創作</p></div>
+                <div id="hide-web"><p>Web系</p></div>
+                <div id="hide-program"><p>プログラミング</p></div>
+                <div id="hide-original"><p>オリジナル</p></div>
+                <div id="hide-game"><p>ゲーム</p></div>
+                <div id="hide-vrc"><p>VRChat</p></div>
+                <div id="hide-b3d"><p>3DCG</p></div>
+                <div id="hide-haihu"><p>配布</p></div>
+            </div>
+        </div>
+        <div id="cards"></div>
+    </main>
+    <div class="separator2"></div>
+    <footer>
+        <p>© 2026 N0RTH_FOX</p>
+    </footer>
+    <script type="module" src="card-edit.js"></script>
+    <script type="module" src="sort.js"></script>
+</body>
+
+</html>

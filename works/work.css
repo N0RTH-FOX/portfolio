@@ -1,0 +1,100 @@
+#show,#hide{
+    display: flex;
+    margin: .1rem;
+    >div{
+        background: var(--bg-color);
+        margin: 0 .2rem;
+        padding: .2rem .3rem;
+        border-radius: .4rem;
+        cursor: pointer;
+        user-select: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        &:hover{
+            background: linear-gradient(#fff8), var(--bg-color);
+        }
+        >p::after{
+            margin: 0 0 0 .2rem;
+            color: #0007;
+        }
+    }
+}
+#show{
+    border: #666 solid 1px;
+    padding: .2rem;
+    border-radius: .5rem;
+    >div>p::after{
+        content: "×";
+    }
+}
+#hide{
+    >div>p::after{
+        content: "+";
+    }
+}
+
+#cards{
+    display: grid;
+    padding: 2rem 15vw;
+    grid-template-columns: 1fr 1fr;
+}
+.card{
+    margin: .5rem;
+    padding: .5rem;
+    border: var(--bg-color) 1px solid;
+    border-radius: .5rem;
+    animation: bg-color-anim 10s 0s linear infinite;
+    >time{
+        display: block;
+        color: #666;
+        font-size: .8rem;
+        &::before{
+            content: "[";
+            margin-right: .2rem;
+        }
+        &::after{
+            content: "]";
+            margin-left: .2rem;
+        }
+    }
+}
+.card-headline{
+    display: grid;
+    grid-template: 
+        "title . icon" auto/
+        calc(100% - 5rem) 1rem 4rem;
+    width: 100%;
+}
+.card-title{
+    display: inline-block;
+    grid-area: title;
+    font-weight: bold;
+    >span{
+        white-space: nowarp;
+    }
+}
+.card-icon{
+    width: calc(4rem - 2px);
+    grid-area: icon;
+    aspect-ratio: 1/1;
+    border: 1px var(--bg-color) solid;
+    border-radius: .5rem;
+    animation: bg-color-anim 10s 0s linear infinite;
+}
+.card-tag{
+    margin: 0 .25rem 0 0;
+    color: #666;
+    white-space: nowarp;
+    font-size: .8rem;
+    transition: none;
+    &::before{
+        content: "#";
+    }
+    &:hover{
+        color: #000;
+        text-decoration: none;
+    }
+    &:active{
+        filter: none;
+    }
+}
