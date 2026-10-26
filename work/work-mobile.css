@@ -1,7 +1,0 @@
-#cards{
-    grid-template-columns: 1fr;
-}
-
-.card-tag,.card>time{
-    font-size: .7rem;
-}
